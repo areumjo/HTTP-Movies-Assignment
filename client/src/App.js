@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
-import UpdatedForm from "./"
+import UpdatedForm from "./Movies/UpdateForm";
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -24,7 +24,7 @@ const App = () => {
       />
       <Route
         path="/update-movie/:id"
-        render={props => <UpdatedForm {...props}/>}
+        render={props => <UpdatedForm {...props} savedList={savedList} updateMoive={setSavedList}/>}
       />
     </>
   );
